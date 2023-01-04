@@ -1,5 +1,7 @@
 import random
-def getChapter(chapterName, chapterStartTime):
+from tkinter import filedialog
+
+def generate_xml_Chapter(chapterName, chapterStartTime):
     return f"""<ChapterAtom>
       <ChapterUID>{random.randint(0, 4294967295)}</ChapterUID>
       <ChapterTimeStart>{chapterStartTime}</ChapterTimeStart>
@@ -13,18 +15,20 @@ def getChapter(chapterName, chapterStartTime):
     </ChapterAtom>"""
 
 
+youtube_chapters = filedialog.askopenfilename()
 chapters = ""
-with open('chapters.txt') as f:
+with open(f'{youtube_chapters}') as f:
     for line in f:
         spaceIndex = line.find(' ')
         chapterStartTime = line[:spaceIndex]
         chapterName = line[spaceIndex+1:]
-        chapters += getChapter(chapterName, chapterStartTime)
+        chapters += generate_xml_Chapter(chapterName, chapterStartTime)
     
     chapters = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE Chapters SYSTEM "matroskachapters.dtd"> -->
 <Chapters>
   <EditionEntry>""" + chapters + """</EditionEntry>
 </Chapters>"""
-    with open('chapters.xml', 'w') as f2:
-        f2.write(chapters)
+
+with open('chapters.xml', 'w') as f:
+    f.write(chapters)

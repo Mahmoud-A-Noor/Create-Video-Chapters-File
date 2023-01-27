@@ -16,6 +16,7 @@ def generate_xml_Chapter(chapterName, chapterStartTime):
 
 
 youtube_chapters = filedialog.askopenfilename()
+SAVE_PATH = youtube_chapters[:youtube_chapters.rindex('/')]
 chapters = ""
 with open(f'{youtube_chapters}') as f:
     for line in f:
@@ -30,5 +31,5 @@ with open(f'{youtube_chapters}') as f:
   <EditionEntry>""" + chapters + """</EditionEntry>
 </Chapters>"""
 
-with open('chapters.xml', 'w') as f:
+with open(f'{SAVE_PATH}/chapters.xml', 'w') as f:
     f.write(chapters)

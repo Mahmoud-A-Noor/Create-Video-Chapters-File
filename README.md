@@ -8,11 +8,11 @@
 ## Usage
 
 1. Create an empty text file
-2. Copy chapters from youtube description and past them into the text file (make sure that no empty lines exists between lines and that all lines have the same format)
+2. Copy chapters from the youtube description and past them into the text file (make sure that no empty lines exist between lines and that all lines have the same format)
     ![youtube chapters](https://user-images.githubusercontent.com/59361888/210526853-46e1014f-8a97-4785-9155-9f62be9219fb.PNG)
     ![youtube chapters formatted](https://user-images.githubusercontent.com/59361888/210526864-e4b21723-e2f1-454e-bc1f-7fae5bc85dd8.PNG)
 
-3. Run the script file using this command `python script.py` then open the text file from the dialog
+3. Run the script file using this command `python script.py` then choose the text file from the dialog
     ![open youtube chapters file](https://user-images.githubusercontent.com/59361888/210527023-a8e494e2-dfc3-439c-af02-16ce479e9576.PNG)
 
 4. Open MKVToolNix
